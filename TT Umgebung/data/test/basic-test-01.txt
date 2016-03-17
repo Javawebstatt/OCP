@@ -1,0 +1,1 @@
+VereineUndSpieler [vereinsListe=[Verein [stadt=H, name=Schützenverein, mitglieder=[], mannschaften=[]]]]
