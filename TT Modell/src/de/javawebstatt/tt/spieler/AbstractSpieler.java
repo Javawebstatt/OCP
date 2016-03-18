@@ -1,13 +1,22 @@
 package de.javawebstatt.tt.spieler;
 
+import java.io.Serializable;
+
 import de.javawebstatt.tt.exceptions.ModellRuntimeException;
 import de.javawebstatt.tt.spieler.schläger.SchlägerI;
+import de.javawebstatt.tt.verein.Verein;
 
-public abstract class AbstractSpieler implements SpielerI {
+public abstract class AbstractSpieler implements SpielerI, Serializable {
 
+	/**
+	 * basic version
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String vorname, nachname;
 	private int punkteZahl;
 	private SchlägerI schläger;
+	private Verein verein;
 
 	AbstractSpieler(String vorname, String nachname) {
 		super();
@@ -63,6 +72,21 @@ public abstract class AbstractSpieler implements SpielerI {
 			return SpielStatus.KEIN_SCHLÄGER;
 		else
 			return SpielStatus.OK;
+	}
+
+	@Override
+	public void setVerein(Verein verein) {
+		this.verein = verein;
+	}
+
+	public Verein getVerein() {
+		return verein;
+	}
+
+	@Override
+	public String toString() {
+		return "AbstractSpieler [vorname=" + vorname + ", nachname=" + nachname + ", punkteZahl=" + punkteZahl
+				+ ", schläger=" + schläger + ", verein=" + (verein != null ? verein.getName() : null) + "]";
 	}
 
 }

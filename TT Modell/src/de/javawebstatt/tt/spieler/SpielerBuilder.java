@@ -1,16 +1,28 @@
 package de.javawebstatt.tt.spieler;
 
-import de.javawebstatt.tt.exceptions.ModellException;
+import de.javawebstatt.tt.exceptions.ModellRuntimeException;
 
 public class SpielerBuilder {
+
+	private static final String[] NACHNAMEN = { "Müller", "Schmidt", "Meier", "Fischer", "Schulze", "Schneider",
+			"Weber", "Bauer", "Wagner", "Becker", "Hoffmacnn", "Koch", "Richter", "Klein" };
 
 	private String vorname;
 	private String nachname;
 	private int punktezahl;
 	private Geschlecht geschlecht;
+	private boolean generiereNachnamen = false;
 
 	public SpielerBuilder() {
 
+	}
+
+	public boolean isGeneriereNachnamen() {
+		return generiereNachnamen;
+	}
+
+	public void setGeneriereNachnamen(boolean generiereNachnamen) {
+		this.generiereNachnamen = generiereNachnamen;
 	}
 
 	public SpielerBuilder setzeVorname(String vorname) {
@@ -20,6 +32,14 @@ public class SpielerBuilder {
 
 	public SpielerBuilder setzeNachname(String nachname) {
 		this.nachname = nachname;
+		return this;
+	}
+
+	public SpielerBuilder generateNachname() {
+		if (vorname == null)
+			throw ModellRuntimeException.NAME_EMPTY;
+		int quersumme = vorname.chars().sum();
+		nachname = NACHNAMEN[quersumme % NACHNAMEN.length];
 		return this;
 	}
 
@@ -33,11 +53,13 @@ public class SpielerBuilder {
 		return this;
 	}
 
-	public SpielerI build() throws ModellException {
+	public SpielerI build() {
 		SpielerI spieler = null;
-		
+
 		if (geschlecht == null)
-			throw ModellException.NO_GESCHLECHT;
+			throw ModellRuntimeException.NO_GESCHLECHT;
+		if (vorname == null && nachname == null)
+			throw ModellRuntimeException.NAME_EMPTY;
 
 		switch (geschlecht) {
 		case MAENNLICH:
@@ -47,9 +69,10 @@ public class SpielerBuilder {
 			spieler = new SpielerFrau(vorname, nachname);
 			break;
 		}
-		
+
 		spieler.setPunktezahl(punktezahl);
-		
+
 		return spieler;
 	}
+
 }

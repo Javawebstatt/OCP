@@ -1,6 +1,7 @@
 package de.javawebstatt.tt.spieler;
 
 import de.javawebstatt.tt.spieler.schläger.SchlägerI;
+import de.javawebstatt.tt.verein.Verein;
 
 public interface SpielerI {
 
@@ -20,6 +21,9 @@ public interface SpielerI {
 	
 	boolean isSpielbereit(); 
 
-	SpielStatus getSpielStatus(); 
+	SpielStatus getSpielStatus();
 
+	void setVerein(Verein verein); 
+
+	Verein getVerein();
 }

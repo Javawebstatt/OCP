@@ -15,35 +15,36 @@ public class VereineUndSpielerPersist {
 	private static final String FILE_OBJ_EXT = ".obj";
 	private static final String FILE_TXT_EXT = ".txt";
 
-	private static Path baseDirectory = Paths.get("C:\\", "Entwicklung", "ide", "eclipse_mars_java", "workspace", "TT",
-			"TT Umgebung", "data");
+	private static Path baseDirectory = Paths.get("C:\\", "Entwicklung", "GIT", "javawebstatt", "OCP", "TT Umgebung",
+			"data");
 
 	public static VereineUndSpieler laden(String fileName, String... directories) {
-		VereineUndSpieler vus = null; 
+		VereineUndSpieler vus = null;
 		Path directoryPath = Paths.get("", directories);
-	
-		Path completePath = baseDirectory.resolve(directoryPath); 
+
+		Path completePath = baseDirectory.resolve(directoryPath);
 		try {
 			Files.createDirectories(completePath);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-	
+
 		Path objFilePath = completePath.resolve(fileName.concat(FILE_OBJ_EXT));
-		try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(objFilePath, StandardOpenOption.READ))) {
-			vus = (VereineUndSpieler) ois.readObject(); 
+		try (ObjectInputStream ois = new ObjectInputStream(
+				Files.newInputStream(objFilePath, StandardOpenOption.READ))) {
+			vus = (VereineUndSpieler) ois.readObject();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return vus; 
+		return vus;
 	}
 
 	public static void speichern(VereineUndSpieler vus, String fileName, String... directories) {
 		Path directoryPath = Paths.get("", directories);
 
-		Path completePath = baseDirectory.resolve(directoryPath); 
+		Path completePath = baseDirectory.resolve(directoryPath);
 		try {
 			Files.createDirectories(completePath);
 		} catch (IOException e1) {
@@ -56,9 +57,9 @@ public class VereineUndSpielerPersist {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		Path txtFilePath = completePath.resolve(fileName.concat(FILE_TXT_EXT));
-		try(BufferedWriter bufWrite = Files.newBufferedWriter(txtFilePath, StandardOpenOption.CREATE)){
+		try (BufferedWriter bufWrite = Files.newBufferedWriter(txtFilePath, StandardOpenOption.CREATE)) {
 			bufWrite.write(vus.toString());
 		} catch (IOException e) {
 			e.printStackTrace();

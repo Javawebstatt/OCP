@@ -1,4 +1,5 @@
 
+	#Deutschland
     Ursula
     Carin / Karin
     Helga
@@ -98,3 +99,25 @@
     Anette / Annette
     Maren
     Marie
+
+	#Amerika
+    Emma
+    Olivia
+    Sophia
+    Isabella
+    Ava
+    Mia
+    Emily
+    Abigail
+    Madison
+    Charlotte
+    Harper
+    Sofia
+    Avery
+    Elizabeth
+    Amelia
+    Evelyn
+    Ella
+    Chloe
+    Victoria
+    Aubrey

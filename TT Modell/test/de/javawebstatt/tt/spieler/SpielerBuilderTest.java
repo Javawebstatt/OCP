@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.javawebstatt.tt.exceptions.ModellException;
+import de.javawebstatt.tt.exceptions.ModellRuntimeException;
 import de.javawebstatt.tt.spieler.Geschlecht;
 import de.javawebstatt.tt.spieler.SpielStatus;
 import de.javawebstatt.tt.spieler.SpielerBuilder;
@@ -33,7 +34,7 @@ public class SpielerBuilderTest {
 		try {
 			spieler = new SpielerBuilder().build();
 		} catch (Exception e) {
-			assertSame(e, ModellException.NO_GESCHLECHT);
+			assertSame(e, ModellRuntimeException.NO_GESCHLECHT);
 			;
 		}
 		assertNull(spieler);

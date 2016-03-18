@@ -16,7 +16,7 @@ public class VereineUndSpielerTest {
 		vus.addVerein(neuerVerein);
 
 		assertEquals(1, vus.getVereinsListe().size());
-		assertEquals(neuerVerein, vus.getVereinsListe().get(0));
+		assertEquals(neuerVerein, vus.getVereinsListe().poll());
 	}
 
 	@Test
@@ -24,9 +24,9 @@ public class VereineUndSpielerTest {
 		VereineUndSpieler orig = new VereineUndSpieler(); 
 		Verein neuerVerein = new Verein(Stadt.H, "Schützenverein");
 		orig.addVerein(neuerVerein);
-		VereineUndSpielerPersist.speichern(orig, "basic-test-01", "test");
+		VereineUndSpielerPersist.speichern(orig, "testSpeichernUndReload", "test");
 		
-		VereineUndSpieler reload = VereineUndSpielerPersist.laden("basic-test-01", "test");
+		VereineUndSpieler reload = VereineUndSpielerPersist.laden("testSpeichernUndReload", "test");
 		assertEquals(orig.toString(), reload.toString());
 	}
 
