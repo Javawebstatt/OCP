@@ -13,6 +13,7 @@ public class SpielerBuilder {
 	private int punktezahl;
 	private Geschlecht geschlecht;
 	private boolean generiereNachnamen = false;
+	private String kürzel;
 
 	public SpielerBuilder() {
 
@@ -54,8 +55,13 @@ public class SpielerBuilder {
 		return this;
 	}
 
+	public SpielerBuilder setzeKürzel(String kürzel) {
+		this.kürzel = kürzel;
+		return this; 
+	}
+
 	public SpielerI build() {
-		SpielerI spieler = null;
+		AbstractSpieler spieler = null;
 
 		if (geschlecht == null)
 			throw ModellRuntimeException.NO_GESCHLECHT;
@@ -72,7 +78,8 @@ public class SpielerBuilder {
 		}
 
 		spieler.setPunktezahl(punktezahl);
-
+		if(kürzel != null) 
+			spieler.setzeKürzel(kürzel); 
 		return spieler;
 	}
 

@@ -14,7 +14,7 @@ public abstract class AbstractSpieler implements SpielerI, Serializable {
 	 * basic version
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private String vorname, nachname;
 	private int punkteZahl;
 	private SchlägerI schläger;
@@ -33,8 +33,7 @@ public abstract class AbstractSpieler implements SpielerI, Serializable {
 		this.nachname = nachname;
 
 		this.punkteZahl = new Random().nextInt(9) + 1;
-		this.kürzel = vorname.substring(0, 1) + nachname.substring(0,1); 
-		// TODO register Kürzel in DB 
+		this.kürzel = vorname.substring(0, 1) + nachname.substring(0, 1);
 	}
 
 	@Override
@@ -92,20 +91,24 @@ public abstract class AbstractSpieler implements SpielerI, Serializable {
 		return kürzel;
 	}
 
+	public void setzeKürzel(String kürzel) {
+		this.kürzel = kürzel; 
+	}
+
 	@Override
 	public void beginneSpiel(SpielI spiel) {
-		if(aktuellesSpiel != null)
+		if (aktuellesSpiel != null)
 			throw ModellRuntimeException.PLAYER_ALREADY_PLAYS;
-		
-		aktuellesSpiel = spiel; 
+
+		aktuellesSpiel = spiel;
 	}
 
 	@Override
 	public void beendeSpiel(SpielI spiel) {
-		if(aktuellesSpiel != spiel)
+		if (aktuellesSpiel != spiel)
 			throw ModellRuntimeException.PLAYER_PLAYS_OTHER_GAME;
-		
-		aktuellesSpiel = null; 
+
+		aktuellesSpiel = null;
 	}
 
 	@Override
@@ -123,6 +126,5 @@ public abstract class AbstractSpieler implements SpielerI, Serializable {
 		return "AbstractSpieler [vorname=" + vorname + ", nachname=" + nachname + ", punkteZahl=" + punkteZahl
 				+ ", kürzel=" + kürzel + ", verein=" + (verein != null ? verein.getName() : null) + "]";
 	}
-
 
 }

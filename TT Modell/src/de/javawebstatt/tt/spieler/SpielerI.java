@@ -6,27 +6,27 @@ import de.javawebstatt.tt.verein.Verein;
 
 public interface SpielerI {
 
-	Geschlecht getGeschlecht();
+	String getKürzel();  // DB, key mit generator
 
-	int getPunktezahl();
+	String getVorname(); // DB
+
+	String getNachname(); // DB 
+	
+	Geschlecht getGeschlecht(); // DB, character feld 'M', 'W'
+
+	int getPunktezahl(); // DB int
 
 	void setPunktezahl(int punkteZahl);
 
-	String getVorname();
-
-	String getNachname();
-	
-	SchlägerI getSchläger(); 
-	
-	void setSchläger(SchlägerI schläger);
-	
 	SpielStatus getSpielStatus();
 
 	void setVerein(Verein verein); 
 
-	Verein getVerein();
+	Verein getVerein(); 
 	
-	String getKürzel(); 
+	SchlägerI getSchläger(); 
+	
+	void setSchläger(SchlägerI schläger);
 	
 	void beginneSpiel(SpielI spiel);
 

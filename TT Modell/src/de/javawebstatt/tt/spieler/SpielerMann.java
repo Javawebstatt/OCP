@@ -13,7 +13,7 @@ public class SpielerMann extends AbstractSpieler {
 
 	@Override
 	public Geschlecht getGeschlecht() {
-		return Geschlecht.WEIBLICH;
+		return Geschlecht.MAENNLICH;
 	}
 
 	@Override
