@@ -1,10 +1,11 @@
-package de.javawebstatt.helper;
+package de.javawebstatt.tt._testhelper;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,12 +17,12 @@ import de.javawebstatt.tt.spieler.SpielerI;
 
 public class ReadTxtFiles {
 
-	public static List<SpielerI> readSpieler(Path pathToFile, Geschlecht geschlecht) {
+	public static List<SpielerI> readSpieler(Path pathToFileWithNames, Geschlecht geschlecht) {
 
 		List<SpielerI> spielerListe = new ArrayList<>();
 
 		try {
-			List<String> lines = Files.readAllLines(pathToFile, StandardCharsets.ISO_8859_1);
+			List<String> lines = Files.readAllLines(pathToFileWithNames, StandardCharsets.ISO_8859_1);
 			spielerListe = lines.parallelStream().map(s -> s.trim()).filter(s -> s.length() > 0 && !s.startsWith("#"))
 					.flatMap(s -> Arrays.stream(s.split("/"))).map(s -> s.trim())
 					.map(s -> new SpielerBuilder().setzeGeschlecht(geschlecht).setzeVorname(s).generateNachname())
@@ -32,4 +33,5 @@ public class ReadTxtFiles {
 
 		return spielerListe;
 	}
+
 }

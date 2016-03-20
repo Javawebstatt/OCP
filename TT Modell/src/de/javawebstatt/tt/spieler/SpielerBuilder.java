@@ -5,7 +5,8 @@ import de.javawebstatt.tt.exceptions.ModellRuntimeException;
 public class SpielerBuilder {
 
 	private static final String[] NACHNAMEN = { "Müller", "Schmidt", "Meier", "Fischer", "Schulze", "Schneider",
-			"Weber", "Bauer", "Wagner", "Becker", "Hoffmacnn", "Koch", "Richter", "Klein" };
+			"Weber", "Bauer", "Wagner", "Becker", "Hoffmann", "Koch", "Richter", "Klein", "Wolf", "Schröder", "Neumann",
+			"Schwarz", "Zimmermann", "Krüger", "Hartmann", "Werner", "Krause" };
 
 	private String vorname;
 	private String nachname;

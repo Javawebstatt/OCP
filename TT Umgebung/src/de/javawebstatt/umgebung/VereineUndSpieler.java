@@ -6,8 +6,11 @@ import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.stream.Collectors;
 
+import de.javawebstatt.tt.liga.LigaI;
 import de.javawebstatt.tt.spieler.SpielerI;
+import de.javawebstatt.tt.verein.Mannschaft;
 import de.javawebstatt.tt.verein.Verein;
 
 public class VereineUndSpieler implements Serializable {
@@ -17,19 +20,19 @@ public class VereineUndSpieler implements Serializable {
 	 */
 	private static final long serialVersionUID = 2L;
 
-	private Deque<Verein> vereinsDeque = new ConcurrentLinkedDeque<>();
-	private Deque<SpielerI> spielerDeque = new ConcurrentLinkedDeque<>();
+	Deque<Verein> vereinsDeque = new ConcurrentLinkedDeque<>();
+	Deque<SpielerI> spielerDeque = new ConcurrentLinkedDeque<>();
 
 	public Deque<Verein> getVereinsListe() {
 		return vereinsDeque;
 	}
-	
+
 	public void addVerein(Verein verein) {
 		vereinsDeque.add(verein);
 	}
 
 	public void addVerein(Verein... vereine) {
-		for(Verein v: vereine){
+		for (Verein v : vereine) {
 			addVerein(v);
 		}
 	}
@@ -43,7 +46,7 @@ public class VereineUndSpieler implements Serializable {
 	}
 
 	public void addVerein(SpielerI... spieler) {
-		for(SpielerI s: spieler){
+		for (SpielerI s : spieler) {
 			addSpieler(s);
 		}
 	}

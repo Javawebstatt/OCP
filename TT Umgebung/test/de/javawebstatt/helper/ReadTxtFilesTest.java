@@ -2,6 +2,7 @@ package de.javawebstatt.helper;
 
 import static org.junit.Assert.*;
 
+import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -28,20 +29,29 @@ public class ReadTxtFilesTest {
 
 	@Before
 	public void ladeListen() {
-		Path pathToFile = Paths.get("C:\\Entwicklung\\GIT\\javawebstatt\\OCP\\TT Umgebung\\data\\namen\\vornamen_männer.txt");
+		Path pathToFile = Paths.get("data/namen/vornamen_männer.txt");
 		männerList = ReadTxtFiles.readSpieler(pathToFile, Geschlecht.MAENNLICH);		
 		pathToFile = Paths.get("C:\\Entwicklung\\GIT\\javawebstatt\\OCP\\TT Umgebung\\data\\namen\\vornamen_frauen.txt");
 		frauenList = ReadTxtFiles.readSpieler(pathToFile, Geschlecht.WEIBLICH);		
 	}
 
 	@Test
+	public void easyFileTest() {
+		Path pathToFile = Paths.get("data/test/one_entry.txt");
+//		System.out.println(pathToFile.toAbsolutePath());
+//		System.out.println(Charset.defaultCharset() + "/" + Charset.availableCharsets());
+		List<SpielerI> list = ReadTxtFiles.readSpieler(pathToFile, Geschlecht.MAENNLICH);	
+		assertEquals(2, list.size());
+	}
+
+	@Test
 	public void sizeOfMännerListe() {
-		assertEquals(153, männerList.size());
+		assertEquals(273, männerList.size());
 	}
 
 	@Test
 	public void sizeOfFrauenListe() {
-		assertEquals(145, frauenList.size());
+		assertEquals(265, frauenList.size());
 	}
 
 	@Test

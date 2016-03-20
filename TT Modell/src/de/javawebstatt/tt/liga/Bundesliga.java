@@ -29,7 +29,7 @@ public class Bundesliga extends AbstractLiga {
 	}
 
 	@Override
-	public AbstractLiga getVaterLiga() {
+	public LigaI getVaterLiga() {
 		return null; 
 	}
 

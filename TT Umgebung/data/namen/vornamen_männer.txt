@@ -1,14 +1,14 @@
-#Quelle http://www.beliebte-vornamen.de/
 
 #Deutschland
+
     Peter
     Michael
     Thomas
     Andreas
     Wolfgang
     Claus / Klaus
-    JÃ¼rgen
-    GÃ¼nter / GÃ¼nther
+    Jürgen
+    Günter / Günther
     Stefan / Stephan
     Christian / Kristian
     Uwe
@@ -26,7 +26,7 @@
     Walter / Walther
     Heinz
     Martin
-    JÃ¶rg / Joerg
+    Jörg / Joerg
     Rolf
     Jens
     Sven / Swen
@@ -49,7 +49,7 @@
     Harald
     Gerd / Gert
     Paul
-    Andre / AndrÃ©
+    Andre / André
     Norbert
     Daniel
     Olaf
@@ -85,24 +85,25 @@
     Maik / Meik / Mike
     Siegfried
     Kai
-    BjÃ¶rn
+    Björn
     Fritz
-    RÃ¼diger
+    Rüdiger
     Richard
     Tim / Timm
     Franz
-    RenÃ©
+    René
     Marcel
     Lothar
     Benjamin
     Hartmut
     Johann
-    JÃ¶rn
+    Jörn
     Erwin
     Wilfried
     Mario
 
 #Amerika	
+
     Noah
     Liam
     Mason

@@ -1,6 +1,6 @@
-#Quelle http://www.beliebte-vornamen.de/
 
 	#Deutschland
+	
     Ursula
     Carin / Karin
     Helga
@@ -74,7 +74,7 @@
     Anneliese
     Rita
     Cornelia
-    Eva
+    Eve
     Sigrid
     Herta / Hertha
     Johanna
@@ -102,11 +102,12 @@
     Marie
 
 	#Amerika
+	
     Emma
     Olivia
     Sophia
     Isabella
-    Ava
+    Ave
     Mia
     Emily
     Abigail
@@ -127,26 +128,26 @@
     
     Emma
     Jade
-    Léa
-    Chloé
+    LÃ©a
+    ChloÃ©
     Manon
     Sarah
-    Inès
+    InÃ¨s
     Louna
     Clara
     Camille
     Lilou
-    Zoé
-    Maélys
+    ZoÃ©
+    MaÃ©lys
     Louise
     Lola
     Lucie
     Lina
-    Éva
+    Eve
     Lily
     Louanne
     
-    #Dänemark
+    #DÃ¤nemark
     
     Sofia
     Ida
@@ -164,14 +165,14 @@
     Karla
     Ella
     Mathilde
-    Liva
+    Live
     Olivia
     Alberte
     Emilie
     Frida
     Mille
     Victoria
-    Lærke
+    LÃ¦rke
     Agnes
     Filippa
     Vigga
@@ -201,12 +202,13 @@
     
     #Spanien
 
-    Lucía
-    María
+    
+    LucÃ­a
+    MarÃ­a
     Martina
     Paula
     Daniela
-    Sofía
+    SofÃ­a
     Valeria
     Carla
     Sara
@@ -225,7 +227,7 @@
     Elena
     Alejandra
     Ainhoa
-    Inés
+    InÃ©s
     Aitana
     Marina
     Vera
@@ -238,8 +240,8 @@
     Andrea
     Nerea
     Carlota
-    Rocío
-    Ángela
+    RocÃ­o
+    Angela
     Vega
     Nora
     Jimena
@@ -249,8 +251,9 @@
     Olivia
     Celia
     Alma
-    Eva
+    Eve
     Elsa
+
     
     
     

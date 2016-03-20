@@ -22,7 +22,6 @@ public class VereinTest {
 		stadt = Stadt.H;
 		vereinsName = "Netter Verein e.v.";
 		verein = new Verein(stadt, vereinsName);
-
 	}
 
 	@Test

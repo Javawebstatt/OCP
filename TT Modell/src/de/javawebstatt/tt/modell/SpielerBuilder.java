@@ -1,7 +1,6 @@
 package de.javawebstatt.tt.modell;
 
 import de.javawebstatt.tt.exceptions.ModellException;
-import de.javawebstatt.tt.exceptions.ModellRuntimeException;
 import de.javawebstatt.tt.modell.api.Geschlecht;
 import de.javawebstatt.tt.modell.api.ISpieler;
 
@@ -36,11 +35,11 @@ public class SpielerBuilder {
 		return this;
 	}
 
-	public ISpieler build() {
+	public ISpieler build() throws ModellException {
 		ISpieler spieler = null;
 		
 		if (geschlecht == null)
-			throw ModellRuntimeException.NO_GESCHLECHT;
+			throw ModellException.NO_GESCHLECHT;
 
 		switch (geschlecht) {
 		case MAENNLICH:

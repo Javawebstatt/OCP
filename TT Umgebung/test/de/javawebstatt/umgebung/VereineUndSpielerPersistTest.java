@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.javawebstatt.helper.ReadTxtFiles;
+import de.javawebstatt.tt._testhelper.ReadTxtFiles;
 import de.javawebstatt.tt.spieler.Geschlecht;
 import de.javawebstatt.tt.spieler.SpielerI;
 import de.javawebstatt.tt.verein.Stadt;
@@ -38,12 +38,12 @@ public class VereineUndSpielerPersistTest {
 
 	@Test
 	public void sizeOfMännerListe() {
-		assertEquals(153, männerList.size());
+		assertEquals(273, männerList.size());
 	}
 
 	@Test
 	public void sizeOfFrauenListe() {
-		assertEquals(145, frauenList.size());
+		assertEquals(265, frauenList.size());
 	}
 
 	@Test
@@ -66,7 +66,7 @@ public class VereineUndSpielerPersistTest {
 		VereineUndSpielerPersist.speichern(basicVUS, "ladeVereineUndFülleMitSpielern", "test");
 		
 		assertEquals(38, basicVUS.getVereinsListe().size());
-		assertEquals(298, basicVUS.getSpielerListe().size());
+		assertEquals(538, basicVUS.getSpielerListe().size());
 	}
 
 	@Test
